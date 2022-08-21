@@ -1,0 +1,16 @@
+FROM openjdk:11-jre-slim
+WORKDIR /application/
+ADD target/*.jar ./app.jar
+ENV JAVA_HOME /opt/jdk
+
+RUN echo $JAVA_HOME && \
+    echo $PATH
+
+RUN which java
+RUN java -version
+
+ENV PATH $PATH:/opt/jdk/bin
+
+
+CMD ["java" "-jar", "./app.jar"]
+EXPOSE 8000
