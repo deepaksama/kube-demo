@@ -18,6 +18,6 @@ public class MessageController {
 
 	@GetMapping(path = { "/", "/message" })
 	public String getMessage() {
-		return String.format("<h3> Hello from instance : </h3> <p> %s </p>", instanceService.getInstanceInfo());
+		return String.format("<h3> App Version V3: Hello from instance : </h3>  %s", instanceService.getInstanceInfo());
 	}
 }
